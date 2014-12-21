@@ -1,14 +1,22 @@
 {
-  "name": "Page Redder",
+  "name": "Sloth",
   "description": "Make the current page sloth",
-  "version": "1.0",
+  "version": "1.1",
   "permissions": [
-    "activeTab"
+    "storage",
+    "tabs",
+    "contextMenus"
   ],
+  "background": {
+      "scripts": ["bg.js"]
+    },
   "content_scripts": [
     {
-    "matches": ["http://*/*"],
-    "js": ["sloth.js"]
+      "matches": [
+      "http://*/*",
+      "https://*/*"
+      ],
+      "js": ["sloth.js"]
     }
   ],
   "manifest_version": 2
